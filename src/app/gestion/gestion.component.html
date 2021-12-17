@@ -1,0 +1,23 @@
+<table class="table" *ngIf="userInfos.nom != ''; else elseBlock">
+    <thead>
+      <tr>
+        <th scope="col">Nom</th>
+        <th scope="col">Prénom</th>
+        <th scope="col">Age</th>
+        <th scope="col">Email</th>
+        <th scope="col">Commentaire</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>{{userInfos.nom}}</td>
+        <td>{{userInfos.prenom}}</td>
+        <td>{{userInfos.age}}</td>
+        <td>{{userInfos.email}}</td>
+        <td>{{userInfos.commentaire}}</td>
+      </tr>
+    </tbody>
+  </table>
+  <ng-template #elseBlock>
+    <h4>404 PAGE NOT FOUND</h4>
+  </ng-template>

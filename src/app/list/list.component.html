@@ -1,0 +1,17 @@
+
+<ul class="list-group d-flex text-center">
+      <li class="list-group-item " *ngFor="let film of films; let i = index" 
+        index = "i" 
+        (click) = "onSwitchOn(i)">{{film.name}}
+      </li>
+</ul>
+    <div *ngIf="status" class="text-center">
+      <h1>***************************  {{films[currentFilm].name}}  *********************</h1>
+     <img class="img picture" src="{{films[currentFilm].src}}">
+    </div>
+     
+
+
+
+
+
