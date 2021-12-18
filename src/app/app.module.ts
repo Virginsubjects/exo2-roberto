@@ -10,6 +10,7 @@ import { ListComponent } from './list/list.component';
 import { GestionComponent } from './gestion/gestion.component';
 import { FormComponent } from './footer/form/form.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { VariablesGlobales } from './globals';
 
 
 
@@ -30,7 +31,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     FormsModule,
     ReactiveFormsModule
   ],
-  providers: [],
+  providers: [VariablesGlobales],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

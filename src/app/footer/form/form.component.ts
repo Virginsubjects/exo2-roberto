@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import {Router} from "@angular/router";
+import { VariablesGlobales } from 'src/app/globals';
 import { FormService } from './services/form.service';
 
 @Component({
@@ -13,7 +14,7 @@ export class FormComponent implements OnInit {
   check: boolean = true;
   constructor(private formBuilder: FormBuilder, 
               private userService: FormService,
-              private router: Router) { }
+              private router: Router, private globales: VariablesGlobales) { }
 
   ngOnInit(): void {
     this.initForm();
@@ -31,7 +32,7 @@ export class FormComponent implements OnInit {
   onSubmitForm(){
     const formValue = this.userForm.value;
     this.userService.user = this.userForm.value;
-    console.log(this.userService.user.commentaire);
+    this.globales.showFooter = true;
     this.router.navigate(['/accueil']);
   }
   hide(){

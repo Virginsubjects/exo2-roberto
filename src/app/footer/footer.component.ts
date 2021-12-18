@@ -1,4 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { VariablesGlobales } from '../globals';
+import { FormService } from './form/services/form.service';
+
 
 @Component({
   selector: 'app-footer',
@@ -7,9 +10,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class FooterComponent implements OnInit {
 
-  constructor() { }
+  constructor(private globales : VariablesGlobales) { 
+  }
 
   ngOnInit(): void {
+  }
+
+  hideFooter(){
+    this.globales.showFooter = false;
+  }
+
+  hide(){
+    return this.globales.showFooter;
   }
 
 }
